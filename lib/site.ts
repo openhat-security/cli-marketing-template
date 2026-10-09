@@ -51,7 +51,7 @@ export const LICENSE = `${TEMPLATE_GITHUB}/blob/main/README.md`;
 export const CONTRIBUTING = `${TEMPLATE_GITHUB}#readme`;
 export const SECURITY = `${DEMO_REPO}/security`;
 export const CONTACT_EMAIL = SITE.contactEmail;
-export const SITE_URL = "https://opencode-web-template.vercel.app";
+export const SITE_URL = "https://cli-marketing-template.vercel.app";
 export const OPENHAT = "https://github.com/openhat-security";
 
 export const NAV = [

@@ -4,7 +4,7 @@ Web template for **terminal / CLI marketing sites**. Same section order as [runh
 
 This is not a product. [jq](https://jqlang.github.io/jq/) is sample demo content so the windows show a real `--help`, `man`, and JSON session. Swap it for your CLI.
 
-Live: [https://opencode-web-template.vercel.app](https://opencode-web-template.vercel.app)
+Live: [https://cli-marketing-template.vercel.app](https://cli-marketing-template.vercel.app)
 
 ## Develop
 
