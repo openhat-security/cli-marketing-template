@@ -6,6 +6,7 @@ export {
   DOCS,
   GITHUB,
   LICENSE,
+  OPENCODE,
   OPENHAT,
   ORG,
   RELEASES,

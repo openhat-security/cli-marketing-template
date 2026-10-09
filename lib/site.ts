@@ -9,20 +9,20 @@ import type { Session } from "@/lib/session";
 /** Swap this file (and `--brand` in `app/globals.css`) to dress the template as your CLI. */
 
 export const SITE = {
-  name: "OpenCode Web",
-  wordmark: "OPENCODE",
+  name: "CLI Marketing Template",
+  wordmark: "CLI TEMPLATE",
   cli: "jq",
   demoCli: "jq",
   tagline: [
-    "A web template for CLIs.",
+    "A marketing template for CLIs.",
     "Same sections as runhug.",
     "jq is only the demo.",
   ],
   description:
     "Starter marketing site for terminal apps. The windows, install tabs, and GitHub pulse stay. The command is sample content — replace it with yours.",
   whatIs:
-    "This is not jq’s website. It is a Next.js starter for CLI and terminal-tool marketing pages, using the same section order as runhug-web and truffles-web. Terminals show a real command (jq) so you can see how --help, man, and live output sit in the layout.",
-  title: "OpenCode Web Template | Starter for CLI marketing sites",
+    "This is not jq’s website and it is not OpenCode. It is a Next.js starter for CLI and terminal-tool marketing pages, using the same section order as runhug-web and truffles-web. That order is inspired by opencode.ai. Terminals show a real command (jq) so you can see how --help, man, and live output sit in the layout.",
+  title: "CLI Marketing Template | Starter for terminal apps",
   year: 2026,
   copyright: "Adam Siwiec",
   contactEmail: "adam@devrecated.com",
@@ -34,8 +34,9 @@ export const SITE = {
 } as const;
 
 export const TEMPLATE_GITHUB =
-  "https://github.com/openhat-security/opencode-web-template";
+  "https://github.com/openhat-security/cli-marketing-template";
 export const TEMPLATE_README = `${TEMPLATE_GITHUB}#readme`;
+export const OPENCODE = "https://opencode.ai/";
 
 const DEMO_REPO = `https://github.com/${SITE.github.owner}/${SITE.github.repo}`;
 
@@ -141,7 +142,7 @@ export const STEPS = [
   {
     n: "1",
     title: "Clone the template",
-    command: "git clone https://github.com/openhat-security/opencode-web-template.git",
+    command: "git clone https://github.com/openhat-security/cli-marketing-template.git",
   },
   {
     n: "2",
@@ -232,7 +233,7 @@ export const TOOLS: {
 export const FAQ = [
   {
     q: "What is this site?",
-    a: "A web template for terminal / CLI marketing pages. Clone it, swap lib/site.ts, and keep the section order. It is not a product and not affiliated with jq.",
+    a: "A marketing template for terminal / CLI sites. Clone it, swap lib/site.ts, and keep the section order. It is not a product, not jq, and not OpenCode.",
   },
   {
     q: "Is this the official jq website?",
@@ -259,7 +260,11 @@ export const FAQ = [
     a: "Live from jqlang/jq as an example of the pulse block. Set SITE.github to your CLI when you ship.",
   },
   {
+    q: "Is this OpenCode?",
+    a: "No. The section order is inspired by opencode.ai. This starter is an independent OpenHat / Devrecated template — not an OpenCode product or official kit.",
+  },
+  {
     q: "Who made the template?",
-    a: "OpenHat / Devrecated. Same layout family as runhug-web and truffles-web. MIT-shaped starter — see the GitHub repo.",
+    a: "OpenHat / Devrecated. Same layout family as runhug-web and truffles-web. Credit to opencode.ai for the section order. MIT-shaped starter — see the GitHub repo.",
   },
 ] as const;

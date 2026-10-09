@@ -1,6 +1,7 @@
 import {
   DOCS,
   GITHUB,
+  OPENCODE,
   RELEASES,
   SITE,
   TEMPLATE_GITHUB,
@@ -41,6 +42,9 @@ export function Footer({ stars }: { stars: number }) {
         </a>
         <a href={TEMPLATE_GITHUB} className="text-muted no-underline hover:underline" target="_blank" rel="noreferrer">
           GitHub
+        </a>
+        <a href={OPENCODE} className="text-muted no-underline hover:underline" target="_blank" rel="noreferrer">
+          Inspired by opencode.ai
         </a>
       </div>
     </>

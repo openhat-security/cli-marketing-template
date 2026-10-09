@@ -10,7 +10,7 @@ export function Hero() {
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="min-w-0 text-left">
           <p className="mb-2 text-[11px] font-bold tracking-[0.28em] text-brand">
-            WEB TEMPLATE
+            CLI MARKETING TEMPLATE
           </p>
           <h1 className="m-0 text-[24px] font-bold leading-[1.2] tracking-tight sm:text-[34px] sm:leading-[1.15]">
             {SITE.tagline[0]}

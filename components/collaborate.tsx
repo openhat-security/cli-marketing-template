@@ -14,7 +14,8 @@ export function Collaborate() {
       </p>
       <p className="mt-3 max-w-[42rem] text-muted">
         Fork it, swap the demo command, and ship. runhug-web and truffles-web
-        use this same section order.
+        use this same section order, inspired by opencode.ai — this is not an
+        OpenCode product.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <a href={`mailto:${CONTACT_EMAIL}`} className="btn">

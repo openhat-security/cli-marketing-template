@@ -59,7 +59,7 @@ const DAY_MS = 86_400_000;
 
 const headers = {
   Accept: "application/vnd.github+json",
-  "User-Agent": "opencode-web-template",
+  "User-Agent": "cli-marketing-template",
   "X-GitHub-Api-Version": "2022-11-28",
 };
 
