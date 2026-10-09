@@ -2,16 +2,18 @@ import type { ReactNode } from "react";
 
 type MacTerminalProps = {
   title?: string;
+  badge?: string;
   children: ReactNode;
 };
 
 export function MacTerminal({
-  title = "jq --help",
+  title = "zsh — ~",
+  badge = "demo",
   children,
 }: MacTerminalProps) {
   return (
-    <div className="overflow-hidden rounded-xl border border-hairline bg-[#1c1c1e] shadow-[0_18px_50px_rgba(0,0,0,0.45)]">
-      <div className="flex h-10 items-center gap-3 border-b border-white/10 bg-[#2c2c2e] px-3.5">
+    <div className="term-window">
+      <div className="term-chrome">
         <div className="flex items-center gap-1.5" aria-hidden>
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57] shadow-[inset_0_-0.5px_0_rgba(0,0,0,0.2)]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e] shadow-[inset_0_-0.5px_0_rgba(0,0,0,0.2)]" />
@@ -20,9 +22,11 @@ export function MacTerminal({
         <div className="min-w-0 flex-1 text-center text-[11px] text-white/55">
           <span className="truncate">{title}</span>
         </div>
-        <div className="w-11" aria-hidden />
+        <span className="shrink-0 rounded-[3px] border border-white/10 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-white/40">
+          {badge}
+        </span>
       </div>
-      <div className="bg-black">{children}</div>
+      {children}
     </div>
   );
 }

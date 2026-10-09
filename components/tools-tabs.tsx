@@ -13,10 +13,11 @@ export function ToolsTabs() {
   return (
     <section className="section !py-4 sm:!py-8" id="tools">
       <h2 className="section-title !mb-1 !text-[13px] sm:!text-[16px]">
-        Help · man · filter · select
+        Demo CLI — help · man · filter · select
       </h2>
       <p className="mb-3 max-w-[42rem] text-[12px] text-muted sm:mb-4 sm:text-[13px]">
-        Captured from this machine’s jq 1.7.1 — help, the man page, and live filters.
+        jq is the sample command. These stills are real 1.7.1 sessions so you can
+        see how --help, man, and JSON sit in the chrome.
       </p>
 
       <div
@@ -81,7 +82,7 @@ export function ToolsTabs() {
           </div>
 
           <MacTerminal title={tab.terminalTitle}>
-            <TerminalOutput text={tab.output} />
+            <TerminalOutput session={tab.session} />
           </MacTerminal>
         </div>
 

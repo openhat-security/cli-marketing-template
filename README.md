@@ -1,6 +1,10 @@
 # opencode-web-template
 
-Starter marketing site in the same section order as [runhug-web](https://github.com/openhat-security/runhug-web) and [truffles-web](https://github.com/openhat-security/truffles-web). Dressed as [jq](https://jqlang.github.io/jq/) so every install line and terminal still is a real command (`jq --help`, `man jq`, `.` / `map` / `select`).
+Web template for **terminal / CLI marketing sites**. Same section order as [runhug-web](https://github.com/openhat-security/runhug-web) and [truffles-web](https://github.com/openhat-security/truffles-web).
+
+This is not a product. [jq](https://jqlang.github.io/jq/) is sample demo content so the windows show a real `--help`, `man`, and JSON session. Swap it for your CLI.
+
+Live: [https://opencode-web-template.vercel.app](https://opencode-web-template.vercel.app)
 
 ## Develop
 
@@ -18,22 +22,15 @@ pnpm start
 
 ## Rebrand
 
-1. Edit `lib/site.ts` and `lib/demos.ts`.
-2. Edit `--brand` tokens in `app/globals.css`.
-3. Point `SITE.github` at your repo. `live: true` fetches stars and the commit graph from the GitHub API.
+1. `lib/site.ts` — name, install commands, FAQ, links.
+2. `lib/demos.ts` — terminal sessions (`--help`, `man`, live commands).
+3. `--brand` tokens in `app/globals.css`.
+4. `SITE.github` — point at your repo and keep `live: true` for the pulse block.
 
 ## Deploy
-
-Live: [https://opencode-web-template.vercel.app](https://opencode-web-template.vercel.app)
 
 Vercel project: `devrecated/opencode-web-template`.
 
 ```bash
 vercel --prod --scope devrecated
 ```
-
-## Notes
-
-- Install tabs are the real jq packages (brew, apt-get, dnf, scoop, winget, choco).
-- Terminal stills were captured from jq 1.7.1.
-- GitHub pulse reads `jqlang/jq` when `SITE.github.live` is true.

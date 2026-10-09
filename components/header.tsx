@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { NAV, SITE } from "@/lib/site";
+import { NAV, SITE, TEMPLATE_GITHUB } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -27,9 +27,14 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="#install" className="btn hidden sm:inline-flex">
-            Download
-            <span aria-hidden>↓</span>
+          <a
+            href={TEMPLATE_GITHUB}
+            className="btn hidden sm:inline-flex"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Clone
+            <span aria-hidden>→</span>
           </a>
           <button
             type="button"
@@ -58,8 +63,14 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <a href="#install" className="btn w-fit" onClick={() => setOpen(false)}>
-              Download
+            <a
+              href={TEMPLATE_GITHUB}
+              className="btn w-fit"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+            >
+              Clone
             </a>
           </div>
         </div>

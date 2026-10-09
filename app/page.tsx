@@ -1,3 +1,4 @@
+import { Banner } from "@/components/banner";
 import { Collaborate } from "@/components/collaborate";
 import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
@@ -6,30 +7,35 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { MacTerminal } from "@/components/mac-terminal";
 import { RepoPulseSection } from "@/components/repo-pulse";
-import { ToolsTabs } from "@/components/tools-tabs";
 import { TerminalOutput } from "@/components/terminal-output";
-import { QUICKSTART_OUTPUT } from "@/lib/demos";
+import { ToolsTabs } from "@/components/tools-tabs";
+import { QUICKSTART_SESSION } from "@/lib/demos";
 import { getRepoPulse } from "@/lib/github";
-import { DOCS, FEATURES, SITE } from "@/lib/site";
+import { FEATURES, SITE, TEMPLATE_README } from "@/lib/site";
 
 export default async function Home() {
   const pulse = await getRepoPulse();
 
   return (
     <div className="frame">
+      <Banner />
       <Header />
 
       <Hero />
 
       <section className="section !py-4 sm:!py-12">
-        <MacTerminal title={`${SITE.cli} — quickstart`}>
-          <TerminalOutput text={QUICKSTART_OUTPUT} />
+        <p className="mb-3 text-[11px] text-muted">
+          Sample session — replace <code className="text-fg">lib/demos.ts</code> with
+          your CLI’s output.
+        </p>
+        <MacTerminal title={QUICKSTART_SESSION.title}>
+          <TerminalOutput session={QUICKSTART_SESSION} />
         </MacTerminal>
       </section>
 
       <section className="section !py-4 sm:!py-12">
         <h2 className="section-title !mb-2 !text-[13px] sm:!mb-3 sm:!text-[16px]">
-          What is {SITE.cli}?
+          What is this template?
         </h2>
         <p className="mb-4 max-w-[42rem] text-[12px] leading-5 text-muted sm:mb-8 sm:text-[15px] sm:leading-7">
           {SITE.whatIs}
@@ -45,12 +51,12 @@ export default async function Home() {
           ))}
         </ul>
         <a
-          href={DOCS}
+          href={TEMPLATE_README}
           className="btn mt-4 !px-2.5 !py-1.5 !text-[12px] sm:mt-8 sm:!px-[0.85rem] sm:!py-2 sm:!text-[14px]"
           target="_blank"
           rel="noreferrer"
         >
-          Read docs
+          Template README
           <span aria-hidden>→</span>
         </a>
       </section>

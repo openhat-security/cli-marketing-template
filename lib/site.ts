@@ -1,26 +1,28 @@
 import {
-  FILTER_OUTPUT,
-  HELP_OUTPUT,
-  MAN_OUTPUT,
-  SELECT_OUTPUT,
+  FILTER_SESSION,
+  HELP_SESSION,
+  MAN_SESSION,
+  SELECT_SESSION,
 } from "@/lib/demos";
+import type { Session } from "@/lib/session";
 
-/** Swap this file (and `--brand` in `app/globals.css`) to rebrand the starter. */
+/** Swap this file (and `--brand` in `app/globals.css`) to dress the template as your CLI. */
 
 export const SITE = {
-  name: "jq",
-  wordmark: "JQ",
+  name: "OpenCode Web",
+  wordmark: "OPENCODE",
   cli: "jq",
+  demoCli: "jq",
   tagline: [
-    "Slice JSON.",
-    "Pipe a filter.",
-    "Print what you need.",
+    "A web template for CLIs.",
+    "Same sections as runhug.",
+    "jq is only the demo.",
   ],
   description:
-    "jq is a command-line JSON processor. Filters select, iterate, and reshape documents — the same language as man jq.",
+    "Starter marketing site for terminal apps. The windows, install tabs, and GitHub pulse stay. The command is sample content — replace it with yours.",
   whatIs:
-    "jq is a lightweight and flexible command-line JSON processor. It reads JSON, applies a filter, and writes JSON (or raw text) to stdout. This starter dresses the runhug / truffles layout as jq so every install line and terminal still is a real command.",
-  title: "jq | Command-line JSON processor",
+    "This is not jq’s website. It is a Next.js starter for CLI and terminal-tool marketing pages, using the same section order as runhug-web and truffles-web. Terminals show a real command (jq) so you can see how --help, man, and live output sit in the layout.",
+  title: "OpenCode Web Template | Starter for CLI marketing sites",
   year: 2026,
   copyright: "Adam Siwiec",
   contactEmail: "adam@devrecated.com",
@@ -31,64 +33,68 @@ export const SITE = {
   },
 } as const;
 
-const REPO = `https://github.com/${SITE.github.owner}/${SITE.github.repo}`;
+export const TEMPLATE_GITHUB =
+  "https://github.com/openhat-security/opencode-web-template";
+export const TEMPLATE_README = `${TEMPLATE_GITHUB}#readme`;
 
-export const GITHUB = REPO;
+const DEMO_REPO = `https://github.com/${SITE.github.owner}/${SITE.github.repo}`;
+
+export const GITHUB = DEMO_REPO;
 export const ORG = `https://github.com/${SITE.github.owner}`;
-export const DISCUSSIONS = `${REPO}/discussions`;
+export const DISCUSSIONS = `${DEMO_REPO}/discussions`;
 export const DOCS = "https://jqlang.github.io/jq/manual/";
 export const MANUAL = DOCS;
-export const RELEASES = `${REPO}/releases`;
-export const CHANGELOG = `${REPO}/blob/master/NEWS.md`;
-export const LICENSE = `${REPO}/blob/master/COPYING`;
-export const CONTRIBUTING = `${REPO}/blob/master/CONTRIBUTING.md`;
-export const SECURITY = `${REPO}/security`;
+export const RELEASES = `${DEMO_REPO}/releases`;
+export const CHANGELOG = `${DEMO_REPO}/blob/master/NEWS.md`;
+export const LICENSE = `${TEMPLATE_GITHUB}/blob/main/README.md`;
+export const CONTRIBUTING = `${TEMPLATE_GITHUB}#readme`;
+export const SECURITY = `${DEMO_REPO}/security`;
 export const CONTACT_EMAIL = SITE.contactEmail;
-export const SITE_URL = "https://jqlang.github.io/jq/";
+export const SITE_URL = "https://opencode-web-template.vercel.app";
 export const OPENHAT = "https://github.com/openhat-security";
 
 export const NAV = [
-  { href: GITHUB, label: "GitHub" },
-  { href: DOCS, label: "Manual" },
-  { href: RELEASES, label: "Releases" },
+  { href: TEMPLATE_GITHUB, label: "GitHub" },
+  { href: TEMPLATE_README, label: "README" },
+  { href: GITHUB, label: "Demo CLI" },
 ] as const;
 
 export const CHIPS = [
-  { label: "filter", hint: "." },
-  { label: "map", hint: "arrays" },
-  { label: "select", hint: "predicates" },
-  { label: "slurp", hint: "-s" },
-  { label: "raw", hint: "-r" },
+  { label: "template", hint: "not a product" },
+  { label: "demo CLI", hint: "jq" },
+  { label: "help / man", hint: "real output" },
+  { label: "install tabs", hint: "brew · apt" },
+  { label: "GitHub pulse", hint: "live API" },
 ] as const;
 
 export const FEATURES = [
   {
-    title: "Identity filter",
-    body: "`.` copies input to output and pretty-prints it. That is the example on jq --help.",
+    title: "Framed marketing page",
+    body: "Sticky header, wordmark, and a single-column frame like runhug-web and truffles-web.",
   },
   {
-    title: "Object and array access",
-    body: "`.foo`, `.[]`, and `keys` pull fields and iterate collections without writing a loop.",
+    title: "Install tabs",
+    body: "brew / apt / dnf / scoop / winget / choco. The commands here install jq as the sample CLI.",
   },
   {
-    title: "map and select",
-    body: "`map(.name)` reshapes arrays. `select(.n > 1)` keeps the objects that match a predicate.",
+    title: "Terminal windows",
+    body: "Mac chrome around a real prompt. Swap the session data in lib/demos.ts for your --help and man pages.",
   },
   {
-    title: "Pipes",
-    body: "Glue filters with `|`. `map(.price) | add` is the averaging example from man jq.",
+    title: "Feature list",
+    body: "Star-prefixed bullets and a docs button. Point them at your CLI once you rebrand.",
   },
   {
-    title: "Output flags",
-    body: "`-r` raw strings, `-c` compact, `-s` slurp every input into one array, `-S` sort keys.",
+    title: "GitHub pulse",
+    body: "Stars, recent commits, and a contribution graph. This demo reads jqlang/jq live.",
   },
   {
-    title: "Streaming and files",
-    body: "Read stdin or named files. `--stream` walks a large document without loading it all.",
+    title: "FAQ and footer",
+    body: "Disclosure accordion plus a five-cell footer. Keep the layout, change the links.",
   },
   {
-    title: "From a file",
-    body: "`jq -f filter.jq data.json` loads a program from disk when the one-liner gets long.",
+    title: "One-file rebrand",
+    body: "Names, install lines, FAQ, and nav live in lib/site.ts. Brand tokens live in app/globals.css.",
   },
 ] as const;
 
@@ -134,115 +140,126 @@ export const INSTALL_TABS = [
 export const STEPS = [
   {
     n: "1",
-    title: "Install",
-    command: "brew install jq",
+    title: "Clone the template",
+    command: "git clone https://github.com/openhat-security/opencode-web-template.git",
   },
   {
     n: "2",
-    title: "Help",
-    command: "jq --help",
+    title: "Run it",
+    command: "pnpm install && pnpm dev",
   },
   {
     n: "3",
-    title: "Pretty-print",
-    command: `echo '{"foo": 0}' | jq .`,
+    title: "Rebrand",
+    command: "edit lib/site.ts",
   },
 ] as const;
 
-export const TOOLS = [
+export const TOOLS: {
+  id: string;
+  label: string;
+  title: string;
+  lead: string;
+  points: string[];
+  command: string;
+  href: string;
+  cta: string;
+  session: Session;
+  terminalTitle: string;
+}[] = [
   {
     id: "help",
     label: "help",
     title: "jq --help",
-    lead: "The real help screen. Usage, the identity filter, and the example from this machine’s jq 1.7.1.",
+    lead: "Sample --help still. Replace this session with your CLI’s help screen.",
     points: [
-      "`.` copies JSON to stdout, pretty-printed.",
-      "See man jq or https://jqlang.github.io/jq/ for the full language.",
+      "Prompt, usage, and flags are styled like a real terminal, not a pasted wall of text.",
+      "The command is real: jq --help from jq 1.7.1.",
     ],
     command: "jq --help",
     href: DOCS,
-    cta: "Manual",
-    output: HELP_OUTPUT,
-    terminalTitle: "jq --help",
+    cta: "jq manual",
+    session: HELP_SESSION,
+    terminalTitle: HELP_SESSION.title,
   },
   {
     id: "man",
     label: "man",
     title: "man jq",
-    lead: "NAME, SYNOPSIS, and FILTERS from the jq(1) manual page.",
+    lead: "Sample man page in a pager chrome — NAME, SYNOPSIS, FILTERS.",
     points: [
-      "`jq [options...] filter [files...]`",
-      "man jq’s own example: `jq 'map(.price) | add'`.",
+      "Section heads are highlighted the way less shows them.",
+      "Status bar reads “Manual page jq(1)” so it is obvious this is a man view.",
     ],
     command: "man jq",
     href: DOCS,
-    cta: "Manual",
-    output: MAN_OUTPUT,
-    terminalTitle: "man jq",
+    cta: "jq manual",
+    session: MAN_SESSION,
+    terminalTitle: MAN_SESSION.title,
   },
   {
     id: "filter",
     label: "filter",
     title: "jq .",
-    lead: "Pretty-print a document, then list its keys — both captured from a live jq run.",
+    lead: "Pretty-print and keys — the identity filter from jq --help.",
     points: [
-      "`echo '{\"foo\": 0}' | jq .` is the example printed by jq --help.",
-      "`keys` returns the top-level field names of an object.",
+      "`echo '{\"foo\": 0}' | jq .` is jq’s own example.",
+      "JSON keys, strings, and numbers are colored so the output is readable.",
     ],
     command: `echo '{"foo": 0}' | jq .`,
     href: DOCS,
-    cta: "Manual",
-    output: FILTER_OUTPUT,
-    terminalTitle: "jq .",
+    cta: "jq manual",
+    session: FILTER_SESSION,
+    terminalTitle: FILTER_SESSION.title,
   },
   {
     id: "select",
     label: "select",
     title: "map and select",
-    lead: "Iterate an array, keep matching objects, or collect a field. Same input, two filters.",
+    lead: "Two live filters on the same document. Swap in your own examples.",
     points: [
-      "`.users[] | select(.n > 1)` yields each matching object.",
-      "`.users | map(.name)` builds a new array of names.",
+      "`.users[] | select(.n > 1)` keeps matching objects.",
+      "`.users | map(.name)` builds a new array.",
     ],
-    command: `echo '{"users":[{"name":"ada","n":3},{"name":"sam","n":1}]}' | jq '.users[] | select(.n > 1)'`,
+    command: `jq '.users[] | select(.n > 1)' users.json`,
     href: DOCS,
-    cta: "Manual",
-    output: SELECT_OUTPUT,
-    terminalTitle: "jq select",
+    cta: "jq manual",
+    session: SELECT_SESSION,
+    terminalTitle: SELECT_SESSION.title,
   },
-] as const;
+];
 
 export const FAQ = [
   {
-    q: "What is jq?",
-    a: "A command-line JSON processor. It reads JSON, applies a filter written in the jq language, and writes the result to stdout. MIT licensed at jqlang/jq.",
+    q: "What is this site?",
+    a: "A web template for terminal / CLI marketing pages. Clone it, swap lib/site.ts, and keep the section order. It is not a product and not affiliated with jq.",
   },
   {
-    q: "How do I see the help and manual?",
-    a: "jq --help prints usage and the identity-filter example. man jq is the full language reference. The web manual is https://jqlang.github.io/jq/manual/.",
+    q: "Is this the official jq website?",
+    a: "No. jq is only the sample command so the terminals show real --help, man, and JSON output. The program lives at github.com/jqlang/jq.",
   },
   {
-    q: "What is the simplest command?",
-    a: "echo '{\"foo\": 0}' | jq . — that is the example from jq --help. `.` pretty-prints and validates the input.",
+    q: "How do I dress it as my CLI?",
+    a: "Edit lib/site.ts (name, install commands, FAQ, links) and lib/demos.ts (terminal sessions). Change --brand in app/globals.css. Point SITE.github at your repo.",
   },
   {
-    q: "How do I pick fields or rows?",
-    a: ".foo for a field, .[] to iterate, map(.name) to rebuild an array, select(.n > 1) to keep matching objects. Pipe filters with |.",
+    q: "Why jq?",
+    a: "It is a standard open-source command with a real man page, a useful --help screen, and filters you can run locally. Any CLI can take its place.",
   },
   {
-    q: "Are the install commands real?",
-    a: "Yes. brew, apt-get, dnf, scoop, winget, and choco all install the jqlang jq package. They are not placeholders.",
+    q: "Are the install commands for the template?",
+    a: "No. Those tabs install jq, the demo CLI. To start the template itself: git clone, then pnpm install && pnpm dev.",
   },
   {
-    q: "Are the terminal stills fake?",
-    a: "No. They are captured from jq 1.7.1 on this machine: jq --help, man jq, and the filters shown next to each tab.",
+    q: "Are the terminals screenshots?",
+    a: "No. They are structured sessions: a zsh-style prompt, then captured jq 1.7.1 output with JSON and man/help styling.",
   },
   {
     q: "Where does the GitHub pulse come from?",
-    a: "Live from jqlang/jq via the public GitHub API, revalidated every 30 minutes. Stars, recent commits, and the contribution graph are not invented.",
+    a: "Live from jqlang/jq as an example of the pulse block. Set SITE.github to your CLI when you ship.",
   },
   {
-    q: "Is this site jq itself?",
-    a: "No. This is the opencode-web-template starter dressed as jq so the layout has a real CLI to copy. The program lives at github.com/jqlang/jq.",
+    q: "Who made the template?",
+    a: "OpenHat / Devrecated. Same layout family as runhug-web and truffles-web. MIT-shaped starter — see the GitHub repo.",
   },
 ] as const;

@@ -1,5 +1,5 @@
 import { CopyCommand } from "@/components/copy-command";
-import { DOCS, STEPS } from "@/lib/site";
+import { STEPS, TEMPLATE_README } from "@/lib/site";
 
 export function GetStarted() {
   return (
@@ -9,12 +9,12 @@ export function GetStarted() {
           Get started in 3 commands
         </h2>
         <a
-          href={DOCS}
+          href={TEMPLATE_README}
           className="text-[11px] text-muted no-underline hover:text-brand"
           target="_blank"
           rel="noreferrer"
         >
-          man jq
+          Template README
         </a>
       </div>
 

@@ -49,6 +49,8 @@ body {
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 15px;
   line-height: 2;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -187,6 +189,67 @@ body {
   margin: 0 0 1.25rem;
   color: var(--muted);
   max-width: 42rem;
+}
+
+.term-window {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--hairline);
+  background: #161616;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.term-chrome {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #2c2c2e;
+  padding: 0 14px;
+}
+
+.term-screen {
+  background: #0c0c0c;
+}
+
+.term-body {
+  margin: 0;
+  min-height: 16rem;
+  max-height: 22rem;
+  overflow: auto;
+  padding: 16px 18px 18px;
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  tab-size: 4;
+  white-space: pre;
+}
+
+.term-status {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1c1c1e;
+  padding: 6px 14px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #94a3b8;
+}
+
+.banner {
+  border-bottom: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.banner strong {
+  color: var(--brand);
+  font-weight: 700;
 }
 
 @media (prefers-reduced-motion: reduce) {

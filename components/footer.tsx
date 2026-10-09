@@ -1,21 +1,20 @@
 import {
-  CHANGELOG,
-  CONTRIBUTING,
   DOCS,
   GITHUB,
-  LICENSE,
   RELEASES,
   SITE,
+  TEMPLATE_GITHUB,
+  TEMPLATE_README,
 } from "@/lib/site";
 import { formatCount } from "@/lib/github";
 
 export function Footer({ stars }: { stars: number }) {
   const cells = [
-    { href: GITHUB, label: stars ? `GitHub [${formatCount(stars)}]` : "GitHub" },
-    { href: DOCS, label: "Docs" },
-    { href: CHANGELOG, label: "Changelog" },
-    { href: RELEASES, label: "Releases" },
-    { href: CONTRIBUTING, label: "Contributing" },
+    { href: TEMPLATE_GITHUB, label: "Template" },
+    { href: GITHUB, label: stars ? `Demo CLI [${formatCount(stars)}]` : "Demo CLI" },
+    { href: DOCS, label: "jq manual" },
+    { href: RELEASES, label: "jq releases" },
+    { href: TEMPLATE_README, label: "README" },
   ];
 
   return (
@@ -37,10 +36,10 @@ export function Footer({ stars }: { stars: number }) {
         <span>
           © {SITE.year} {SITE.copyright}
         </span>
-        <a href={LICENSE} className="text-muted no-underline hover:underline" target="_blank" rel="noreferrer">
-          MIT
+        <a href={TEMPLATE_README} className="text-muted no-underline hover:underline" target="_blank" rel="noreferrer">
+          README
         </a>
-        <a href={GITHUB} className="text-muted no-underline hover:underline" target="_blank" rel="noreferrer">
+        <a href={TEMPLATE_GITHUB} className="text-muted no-underline hover:underline" target="_blank" rel="noreferrer">
           GitHub
         </a>
       </div>

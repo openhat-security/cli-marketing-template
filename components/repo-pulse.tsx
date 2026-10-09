@@ -24,8 +24,12 @@ export function RepoPulseSection({ pulse }: Props) {
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
             <div className="min-w-0">
               <h2 className="section-title !mb-1 !text-[13px] sm:!text-[16px]">
-                Live from GitHub
+                Sample pulse — jqlang/jq
               </h2>
+              <p className="mb-2 text-[11px] text-muted">
+                Example of the GitHub block. Point{" "}
+                <code className="text-fg">SITE.github</code> at your CLI.
+              </p>
               <p className="m-0 text-[12px] leading-5 sm:text-[13px]">
                 <a
                   href={pulse.url}

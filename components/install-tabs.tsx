@@ -36,7 +36,7 @@ export function InstallTabs() {
   }
 
   return (
-    <div id="install" className="relative z-10">
+    <div className="relative z-10">
       <div
         role="tablist"
         aria-label="Install commands"

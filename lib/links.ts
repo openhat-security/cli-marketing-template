@@ -11,4 +11,5 @@ export {
   RELEASES,
   SECURITY,
   SITE_URL,
+  TEMPLATE_GITHUB,
 } from "@/lib/site";
