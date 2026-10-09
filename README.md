@@ -24,6 +24,8 @@ pnpm start
 
 ## Deploy
 
+Live: [https://opencode-web-template.vercel.app](https://opencode-web-template.vercel.app)
+
 Vercel project: `devrecated/opencode-web-template`.
 
 ```bash
