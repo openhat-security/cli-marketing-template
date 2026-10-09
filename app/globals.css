@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* jq brand — sky starter token. Swap --brand* to re-skin. */
+:root {
+  --bg: #05080f;
+  --bg-elevated: #0b1220;
+  --fg: #f8fafc;
+  --muted: #94a3b8;
+  --hairline: rgba(148, 163, 184, 0.18);
+  --brand: #38bdf8;
+  --brand-dim: #0ea5e9;
+  --brand-deep: #0369a1;
+  --wash: rgba(56, 189, 248, 0.12);
+  --invert: #38bdf8;
+  --invert-fg: #05080f;
+  --ok: #38bdf8;
+  --frame: 67.5rem;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-hairline: var(--hairline);
+  --color-brand: var(--brand);
+  --color-brand-dim: var(--brand-dim);
+  --color-brand-deep: var(--brand-deep);
+  --color-wash: var(--wash);
+  --color-invert: var(--invert);
+  --color-invert-fg: var(--invert-fg);
+  --color-ok: var(--ok);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+html {
+  color-scheme: dark;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 100% -10%, rgba(56, 189, 248, 0.16), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(3, 105, 161, 0.22), transparent 50%),
+    var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 15px;
+  line-height: 2;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: var(--fg);
+}
+
+.frame {
+  max-width: var(--frame);
+  margin-inline: auto;
+  border-inline: 1px solid var(--hairline);
+  min-height: 100vh;
+  background: color-mix(in srgb, var(--bg-elevated) 72%, transparent);
+}
+
+#install {
+  scroll-margin-top: 6rem;
+}
+
+.section {
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+
+@media (min-width: 40rem) {
+  .section {
+    padding: 3rem 5rem;
+  }
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: var(--brand);
+}
+
+.wordmark {
+  color: var(--brand);
+  letter-spacing: 0.18em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  text-decoration: none;
+  color: var(--invert-fg);
+  background: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+.btn:hover {
+  background: var(--brand-dim);
+  border-color: var(--brand-dim);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  color: var(--brand);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--brand) 45%, transparent);
+}
+
+.btn-outline:hover {
+  background: var(--wash);
+  border-color: var(--brand);
+}
+
+.star {
+  color: var(--brand);
+  margin-right: 0.6rem;
+}
+
+.faq-item {
+  border-top: 1px solid var(--hairline);
+}
+
+.faq-item:first-child {
+  border-top: 0;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.faq-item summary:hover {
+  color: var(--brand);
+}
+
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-weight: 400;
+  color: var(--brand);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:active {
+    transform: none;
+  }
+}
