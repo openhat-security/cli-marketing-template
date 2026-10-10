@@ -1,6 +1,6 @@
 # CLI Marketing Template
 
-Web template for **terminal / CLI marketing sites**. Same section order as [runhug-web](https://github.com/openhat-security/runhug-web) and [truffles-web](https://github.com/openhat-security/truffles-web). That order is inspired by [opencode.ai](https://opencode.ai/) — this starter is not an OpenCode product or official kit.
+Web template for **terminal / CLI marketing sites**. Same section order as [runhug-web](https://github.com/openhat-security/runhug-web) and [truffles-web](https://github.com/openhat-security/truffles-web). Website design inspired by [opencode.ai](https://opencode.ai/) — this starter is not an OpenCode product or official kit.
 
 This is not a product. [jq](https://jqlang.github.io/jq/) is sample demo content so the windows show a real `--help`, `man`, and JSON session. Swap it for your CLI.
 

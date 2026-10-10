@@ -4,7 +4,7 @@ export function Banner() {
   return (
     <div className="banner">
       <strong>CLI marketing template</strong> — not a product. jq is sample
-      content. Section order inspired by{" "}
+      content. Website design inspired by{" "}
       <a
         href={OPENCODE}
         className="text-brand underline-offset-4 hover:underline"

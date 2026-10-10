@@ -21,7 +21,7 @@ export const SITE = {
   description:
     "Starter marketing site for terminal apps. The windows, install tabs, and GitHub pulse stay. The command is sample content — replace it with yours.",
   whatIs:
-    "This is not jq’s website and it is not OpenCode. It is a Next.js starter for CLI and terminal-tool marketing pages, using the same section order as runhug-web and truffles-web. That order is inspired by opencode.ai. Terminals show a real command (jq) so you can see how --help, man, and live output sit in the layout.",
+    "This is not jq’s website and it is not OpenCode. It is a Next.js starter for CLI and terminal-tool marketing pages, using the same section order as runhug-web and truffles-web. Website design inspired by opencode.ai. Terminals show a real command (jq) so you can see how --help, man, and live output sit in the layout.",
   title: "CLI Marketing Template | Starter for terminal apps",
   year: 2026,
   copyright: "Adam Siwiec",
@@ -261,10 +261,10 @@ export const FAQ = [
   },
   {
     q: "Is this OpenCode?",
-    a: "No. The section order is inspired by opencode.ai. This starter is an independent OpenHat / Devrecated template — not an OpenCode product or official kit.",
+    a: "No. Website design inspired by opencode.ai. This starter is an independent OpenHat / Devrecated template — not an OpenCode product or official kit.",
   },
   {
     q: "Who made the template?",
-    a: "OpenHat / Devrecated. Same layout family as runhug-web and truffles-web. Credit to opencode.ai for the section order. MIT-shaped starter — see the GitHub repo.",
+    a: "OpenHat / Devrecated. Same layout family as runhug-web and truffles-web. Website design inspired by opencode.ai. MIT-shaped starter — see the GitHub repo.",
   },
 ] as const;
